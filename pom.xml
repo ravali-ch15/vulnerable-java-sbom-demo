@@ -1,49 +1,74 @@
-# Vulnerable Java SBOM Demo
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://www.m
 
-This project is intentionally designed with multiple vulnerable dependencies for hands-on training in:
+aven.apache.org/xsd/maven-4.0.0.xsd">
 
-- SBOM (Software Bill of Materials)
-- Vulnerability Scanning
-- Dependency Risk Analysis
+    <modelVersion>4.0.0</modelVersion>
 
----
+    <groupId>com.example</groupId>
+    <artifactId>vulnerable-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-## 🚨 Vulnerable Dependencies Included
+    <dependencies>
 
-The project contains the following intentionally outdated/vulnerable libraries:
+        <!-- 1. Log4j (Log4Shell) -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.14.1</version>
+        </dependency>
 
-1. Log4j Core (2.14.1)  
-   → Known for Log4Shell vulnerability  
+        <!-- 2. Jackson Databind (Multiple CVEs) -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.9</version>
+        </dependency>
 
-2. Jackson Databind (2.9.9)  
-   → Multiple deserialization vulnerabilities  
+        <!-- 3. Apache Commons Collections -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.0</version>
+        </dependency>
 
-3. Apache Commons Collections (4.0)  
-   → Deserialization-related issues  
+        <!-- 4. Spring Core (old vulnerable version) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.2.0.RELEASE</version>
+        </dependency>
 
-4. Spring Core (5.2.0.RELEASE)  
-   → Known vulnerabilities in older versions  
+        <!-- 5. SnakeYAML (Deserialization issues) -->
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.26</version>
+        </dependency>
 
-5. SnakeYAML (1.26)  
-   → Unsafe deserialization risks  
+        <!-- 6. Apache HTTP Client -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.2</version>
+        </dependency>
 
-6. Apache HttpClient (4.5.2)  
-   → Known CVEs in older versions  
+        <!-- 7. Gson (older version issues) -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
+        </dependency>
 
-7. Gson (2.8.5)  
-   → Vulnerabilities in older parsing logic  
+        <!-- 8. Guava (older version vulnerabilities) -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.0</version>
+        </dependency>
 
-8. Guava (23.0)  
-   → Known issues in outdated versions  
+    </dependencies>
 
----
-
-## 🎯 Purpose of This Project
-
-This repository is created for educational purposes to:
-
-- Generate SBOM using tools  
-- Identify vulnerabilities in dependencies  
-- Understand direct vs transitive dependencies  
-- Practice vulnerability triage  
-
+</project>
