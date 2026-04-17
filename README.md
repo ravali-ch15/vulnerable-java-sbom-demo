@@ -1,2 +1,51 @@
 # vulnerable-java-sbom-demo
 demo for Vulnerable SBOM
+
+# Vulnerable Java SBOM Demo
+
+This project is intentionally designed with multiple vulnerable dependencies for hands-on training in:
+
+- SBOM (Software Bill of Materials)
+- Vulnerability Scanning
+- Dependency Risk Analysis
+
+---
+
+## 🚨 Vulnerable Dependencies Included
+
+The project contains the following intentionally outdated/vulnerable libraries:
+
+1. Log4j Core (2.14.1)  
+   → Known for Log4Shell vulnerability  
+
+2. Jackson Databind (2.9.9)  
+   → Multiple deserialization vulnerabilities  
+
+3. Apache Commons Collections (4.0)  
+   → Deserialization-related issues  
+
+4. Spring Core (5.2.0.RELEASE)  
+   → Known vulnerabilities in older versions  
+
+5. SnakeYAML (1.26)  
+   → Unsafe deserialization risks  
+
+6. Apache HttpClient (4.5.2)  
+   → Known CVEs in older versions  
+
+7. Gson (2.8.5)  
+   → Vulnerabilities in older parsing logic  
+
+8. Guava (23.0)  
+   → Known issues in outdated versions  
+
+---
+
+## 🎯 Purpose of This Project
+
+This repository is created for educational purposes to:
+
+- Generate SBOM using tools  
+- Identify vulnerabilities in dependencies  
+- Understand direct vs transitive dependencies  
+- Practice vulnerability triage  
