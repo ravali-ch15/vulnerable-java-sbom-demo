@@ -53,6 +53,16 @@ aven.apache.org/xsd/maven-4.0.0.xsd">
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.2</version>
+
+                 <exclusions>
+                          <exclusion>
+                                  <groupId>commons-logging</groupId>
+                                    <artifactId>commons-logging</artifactId>
+                                   
+                          </exclusion>
+
+                          
+                 </exclusions>
         </dependency>
 
         <!-- 7. Gson (older version issues) -->
